@@ -25,4 +25,5 @@ export const parseFile = (fileName: string) =>
   fs
     .readFileSync(fileName, "utf8")
     .split("\n")
-    .map((str) => str.trim());
+    .map((str: string) => str.trim())
+    .filter((str: string) => str.length > 5);
