@@ -32,6 +32,9 @@ const fetchAIRequest = async () => {
   }
 };
 
+console.log("Run: ", new Date().toLocaleString());
+fetchAIRequest();
+
 schedule.scheduleJob(`0 */${EVERY_X_HOUR} * * *`, function () {
   console.log("Run: ", new Date().toLocaleString());
   fetchAIRequest();
