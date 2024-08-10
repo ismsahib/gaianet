@@ -16,7 +16,7 @@
     "strictPropertyInitialization": false,
     "emitDecoratorMetadata": true,
     "paths": {
-      "@root/*": ["./*"],
+      "@root/*": ["./*"]
     },
     "typeRoots": ["./node_modules/@types"]
   },
