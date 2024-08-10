@@ -3,7 +3,7 @@ import "./aliases";
 import { fetchWithRetries, parseFile } from "./utils";
 import schedule from "node-schedule";
 
-const EVERY_X_HOUR = 4;
+const EVERY_TIME = "*/30 * * * *";
 
 const fetchAIRequest = async () => {
   const idArr = parseFile(path.join(__dirname, "id.txt"));
@@ -35,7 +35,7 @@ const fetchAIRequest = async () => {
 console.log("Run: ", new Date().toLocaleString());
 fetchAIRequest();
 
-schedule.scheduleJob(`0 */${EVERY_X_HOUR} * * *`, function () {
+schedule.scheduleJob(EVERY_TIME, function () {
   console.log("Run: ", new Date().toLocaleString());
   fetchAIRequest();
 });
